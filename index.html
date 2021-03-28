@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description"
+        content="Versetze dich in die Rolle von Gesundheitsminister Jens Spahn und treffe humoristische Entscheidungen">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="dark">
+
+    <title>Der satirische Corona Krisenmanagement Simulator</title>
+
+    <link rel="canonical" href="https://covidmaster.github.io/">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="manifest" href="/images/site.webmanifest">
+    <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="/images/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <meta property="og:locale" content="de">
+    <meta property="og:type" content="game">
+    <meta property="og:title" content="Der satirische Corona Krisenmanagement Simulator">
+    <meta property="og:description"
+        content="Versetze dich in die Rolle von Gesundheitsminister Jens Spahn und treffe humoristische Entscheidungen">
+    <meta property="og:url" content="https://covidmaster.github.io/">
+    <meta property="og:image" content="https://covidmaster.github.io/images/logo.png">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Der satirische Corona Krisenmanagement Simulator">
+    <meta name="twitter:description"
+        content="Versetze dich in die Rolle von Gesundheitsminister Jens Spahn und treffe humoristische Entscheidungen">
+    <meta name="twitter:url" content="https://covidmaster.github.io/">
+    <meta name="twitter:image" content="https://covidmaster.github.io/images/logo.png">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<body class="bg-dark text-white">
+    <div id="nav">
+        <div id="dateParent">
+            <p id="date">27.03.2020</p>
+        </div>
+        <div id="bars">
+            <div class="bar">
+                <div class="progress">
+                    <div id="bar1" class="progress-bar progress-bar-good" style="width: 90%;">
+                        45.000€
+                    </div>
+                </div>
+                <p>Monatliches Gehalt</p>
+            </div>
+            <div class="bar-margin"></div>
+            <div class="bar">
+                <div class="progress">
+                    <div id="bar2" class="progress-bar progress-bar-bad" style="width: 10%;">
+                        50
+                    </div>
+                </div>
+                <p>Inzidenzwert</p>
+            </div>
+            <div class="bar-margin"></div>
+            <div class="bar">
+                <div class="progress">
+                    <div id="bar3" class="progress-bar progress-bar-bad" style="width: 50%;">
+                        50%
+                    </div>
+                </div>
+                <p>Zufriedenheit der Bürger</p>
+            </div>
+        </div>
+        <div id="settingsParent">
+            <i id="settings" class="bi bi-gear-fill"></i>
+        </div>
+    </div>
+    <div id="panel" class="text-center">
+        <div id="questionParent">
+            <a id="questionLink" class="extern" href="https://www.zdf.de" target="_blank">
+                <i class="bi bi-box-arrow-up-right"></i>
+            </a>
+            <div id="question">
+                Der erste Corona Fall in Deutschland wurde nachgewiesen
+                <br>
+                <br>
+                Was tust du?
+            </div>
+        </div>
+        <div id="answers">
+            <div class="answerParent-margin answerParent">
+                <a id="answer1Link" class="extern d-none" href="https://www.zdf.de" target="_blank">
+                    <i class="bi bi-box-arrow-up-right"></i>
+                </a>
+                <div id="answer1">Das China Virus gibt es nicht. Das ist nur ne normale Grippewelle. Die kann uns
+                    nichts.</div>
+            </div>
+            <div class="answerParent">
+                <a id="answer2Link" class="extern" href="https://www.zdf.de" target="_blank">
+                    <i class="bi bi-box-arrow-up-right"></i>
+                </a>
+                <div id="answer2">Eine Taskforce aufstellen und das Gesundheitsamt das Umfeld der Person auf weitere
+                    angesteckte Personen untersuchen.</div>
+            </div>
+        </div>
+    </div>
+
+    <iframe id="backgroundMusic" width="1280" height="720"
+        src="https://www.youtube.com/embed/40MJUEQ6RJM?autoplay=1&controls=0&disablekb=1&enablejsapi=1&iv_load_policy=3&loop=1&modestbranding=1&origin=https://covidmaster.github.io/&showinfo=0&start=13"
+        title="YouTube video player" frameborder="0" allow="autoplay; encrypted-media"></iframe>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
+        integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
+        crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="content.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+</body>
+
+</html>
