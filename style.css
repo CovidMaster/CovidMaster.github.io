@@ -1,164 +1,260 @@
-html, body {
-    height: 100%;
+/* General */
+
+html {
+    font-family: Roboto, sans-serif;
+    font-size: calc(0.44vw + 7.62px);
 }
 
-#backgroundMusic {
-    display: none;
-}
+/* Nav General */
 
-#nav {
+nav {
+    margin-top: 3.4vh;
     position: absolute;
     width: 100%;
-    font-size: 0;
-    height: 12%;
-    font-family: Roboto, sans-serif;
+    display: flex;
     font-weight: bold;
 }
 
-#nav > div {
-    display: inline-block;
-    font-size: initial;
+nav div {
     height: 100%;
-    font-size: 2.22vmin;
+    font-size: 1.5rem;
     vertical-align: top;
 }
 
-#date {
+.outer {
+    height: 4.7vh;
+    width: 12.5%;
+    display: flex;
+}
+
+.outer p {
     margin: auto;
     width: max-content;
-    margin-top: 18.5%;
 }
 
-#dateParent {
-    width: 12%;
+.middle {
+    height: max-content;
+    width: 75%;
+    display: flex;
+    justify-content: space-between;
 }
 
-#bars {
-    width: 76%;
-    font-size: 0 !important;
+.mobile {
+    display: none;
 }
+
+/* Nav Bars */
 
 .bar {
-    width: 32.45%;
-    height: 100%;
-    margin-top: 2.5%;
-    display: inline-block;
-    font-size: initial;
+    height: max-content;
+    width: 32.5%;
 }
 
-.bar > p {
-    margin-top: 1%;
-    font-size: 2.22vmin;
+.bar p {
+    margin: 0px;
+    width: max-content;
 }
 
 .progress {
-    height: 39%;
+    height: 4.7vh;
     background-color: #565E66;
 }
 
-.progress-bar {
-    font-family: Roboto, sans-serif;
-    font-weight: bold;
-    font-size: 2.22vmin;
-}
-
-.progress-bar-good {
+.good {
     background-color: #A5DE78;
 }
 
-.progress-bar-bad {
+.bad {
     background-color: #E57070;
 }
 
-.bar-margin {
-    display: inline-block;
-    width: 1.3%;
-}
+/* Nav Settings */
 
-#settingsParent {
-    width: 12%;
-}
-
-#settings {
-    margin-left: 55%;
-    width: max-content;
-    display: block;
-    font-size: 200%;
-    margin-top: 11.5%;
+.settings {
+    margin-top: -2.5% !important;
+    margin-right: 15% !important;
+    height: min-content;
+    font-size: 3.5rem;
     color: #676E75;
     cursor: pointer;
+    line-height: 1;
 }
 
-#settings:hover {
+[class^="bi-"]::before, [class*=" bi-"]::before {
+	vertical-align: 0px;
+}
+
+.settings:hover {
     color: #767D84;
 }
 
-#panel {
-    margin-top: 50vh;
-    height: 50%;
+/* Main General */
+
+main {
     position: absolute;
-    width: 60%;
+    margin-top: 50vh;
     margin-left: 20%;
-    font-family: Roboto, sans-serif;
-    font-weight: bold;
-    font-size: 3.334vmin;
+    width: 60%;
+    height: 50%;
+    font-size: 2rem;
 }
 
-@media all and (max-width: 1615px) and (min-width: 548px) {
-    #panel {
-        font-size: 2.5vmin;
-    }
-}
-
-#questionParent {
+main div {
     width: 100%;
+}
+
+/* Main Question */
+
+.question {
     height: 33%;
     background-color: #393F44;
-    border-radius: 15px;
     border: 1px solid #565E66;
-    padding: 1%;
-    position: relative;
+    border-radius: 15px;
     display: flex;
     align-items: center;
+    padding: 1%;
+    font-weight: bold;
 }
 
-#question {
-    width: 100%;
-}
+/* Main Answers */
 
-#answers {
-    width: 100%;
-    height: 66%;
+.answers {
+    margin-top: 4%;
+    height: 46%;
     display: flex;
+    justify-content: space-between;
 }
 
-.answerParent {
-    height: 70%;
+.answer {
+    position: relative;
+    width: 47%;
     background-color: #393F44;
+    border: 1px solid #565E66;
     border-radius: 5px;
     display: flex;
-    width: 46.9%;
-    margin-top: 4.2%;
-    border: 1px solid #565E66;
-    font-weight: initial;
-    padding: 1%;
-    font-size: 87%;
-    cursor: pointer;
-    position: relative;
     align-items: center;
+    padding: 1%;
+    cursor: pointer;
 }
 
-.answerParent:hover {
+.answer:hover {
     background-color: #484E53;
-}
-
-.answerParent-margin {
-    margin-right: 6.2%;
 }
 
 .extern {
     position: absolute;
     top: 4px;
     right: 9px;
-    font-size: 75%;
+    font-size: 1.5rem;
+}
+
+/* YouTube IFrame */
+
+#backgroundMusic {
+    display: none;
+}
+
+/* Responsive */
+
+@media all and (max-width: 1160px) {
+    nav {
+        margin-top: 1.5vh;
+    }
+
+    .outer {
+        width: 25%;
+    }
+
+    .middle {
+        width: 50%;
+        flex-direction: column;
+    }
+
+    .bar {
+        width: 100%;
+    }
+
+    .bar:not(:last-child) {
+        margin-bottom: 2.5%;
+    }
+
+    .settings {
+        margin-top: 0px !important;
+    }
+
+    main {
+        margin-left: 10%;
+        width: 80%;
+    }
+
+    .answers {
+        height: 51%;
+    }
+}
+
+@media all and (max-width: 700px) {
+    nav {
+        flex-wrap: wrap;
+    }
+
+    .outer {
+        width: 50%;
+    }
+
+    .middle {
+        margin: auto;
+        width: 95%;
+    }
+
+    .bar:last-child {
+        margin-bottom: 2.5%;
+    }
+
+    .settings {
+        margin: auto !important;
+    }
+
+    .mobile {
+        display: flex;
+    }
+
+    .desktop {
+        display: none;
+    }
+
+    main {
+        margin-top: 40vh;
+        margin-left: 2.5%;
+        height: 60%;
+        width: 95%;
+    }
+
+    .answers {
+        height: 60%;
+    }
+}
+
+@media all and (max-height: 600px) {
+    html {
+        font-size: calc(0.44vw + 5px);
+    }
+
+    .middle {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .bar {
+        width: 32%;
+    }
+
+    main {
+        margin-top: 30vh;
+        height: 70%;
+    }
+
+    .answers {
+        height: 56%;
+    }
 }

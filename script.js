@@ -4,12 +4,12 @@ let executedEvents = new Array(content.length).fill(0);
 
 function getDate(germanDateFormat) {
 	let dateParts = germanDateFormat.split(".");
-	return new Date(dateParts[2], dateParts[1]-1, dateParts[0]);
+	return new Date(dateParts[2], dateParts[1] - 1, dateParts[0]);
 }
 
 function requirementFulfilled() {
 	if (currentContent.require) {
-		if (currentContent.ref === 0 && getDate($("#date").html()) < getDate(currentContent.require)) {
+		if (currentContent.ref === 0 && getDate($(".date").html()) < getDate(currentContent.require)) {
 			console.log(currentContent.question);
 			return false;
 		}
@@ -32,7 +32,7 @@ function checkIfEvent() {
 	for (let i = 0; i < content.length; i++) {
 		if ("event" in content[i] && executedEvents[i] === 0) {
 			for (let j = 0; j < 3; j++) {
-				if (content[i].event === j && (getValue(j+1) <= content[i].max || getValue(j+1) >= content[i].min)) {
+				if (content[i].event === j && (getValue(j + 1) <= content[i].max || getValue(j + 1) >= content[i].min)) {
 					currentContent = content[i];
 					executedEvents[i] = 1;
 					return true;
@@ -48,7 +48,7 @@ function setContent() {
 		getRandomContent();
 	}
 	let newContent = currentContent;
-	
+
 	$("#question").html(newContent.question.replace(/\n/g, "<br>"));
 	$("#questionLink").addClass("d-none");
 	if (newContent.link) {
@@ -73,23 +73,23 @@ function setContent() {
 }
 
 function increaseDate() {
-	let date = getDate($("#date").html());
+	let date = getDate($(".date").html());
 	date.setDate(date.getDate() + 1);
 	let day = date.getDate();
-    let month = date.getMonth() + 1;
-    if ((String(day)).length === 1) {
-    	day ="0" + day;
+	let month = date.getMonth() + 1;
+	if ((String(day)).length === 1) {
+		day = "0" + day;
 	}
-    if ((String(month)).length === 1) {
-    	month = "0" + month;
+	if ((String(month)).length === 1) {
+		month = "0" + month;
 	}
-	$("#date").html(day + "." + month + "." + date.getFullYear());
+	$(".date").html(day + "." + month + "." + date.getFullYear());
 }
 
 function changeScore(clickedAnswer) {
 	const baseScore = [10, 1, 1];
 	let score = currentContent.answers[0].score;
-	if ((!rightOrder && clickedAnswer === "answer1Parent") || (rightOrder && clickedAnswer !== "answer1Parent")) {
+	if ((!rightOrder && clickedAnswer === "answer1") || (rightOrder && clickedAnswer !== "answer1")) {
 		score = currentContent.answers[1].score;
 	}
 
@@ -139,7 +139,7 @@ async function answerImpact(clickedAnswer) {
 		changeScore(clickedAnswer);
 	}
 	setContent();
-	$("#panel").css("display", "block");
+	$("main").css("display", "block");
 }
 
 var player;
@@ -152,19 +152,21 @@ function onYouTubeIframeAPIReady() {
 }
 
 function onPlayerReady(event) {
-	event.target.playVideo();
-  }
+	function onPlayerReady(event) {
+		event.target.playVideo();
+	}
+}
 
 function init() {
 	setContent();
-	$(".answerParent").click(function() {
-		$("#panel").css("display", "none");
-		answerImpact($( this ).attr("id"));
+	$(".answer").click(function () {
+		$("main").css("display", "none");
+		answerImpact($(this).find("div").attr("id"));
 	});
 	//player.setVolume(25);
 	//player.playVideo();
 }
 
-$(function() {
+$(function () {
 	init();
 });

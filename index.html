@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="color-scheme" content="dark">
 
-    <title>Der satirische Corona Krisenmanagement Simulator</title>
+    <title>Corona Krisenmanagement Simulator</title>
 
     <link rel="canonical" href="https://covidmaster.github.io/">
 
@@ -42,44 +42,47 @@
     <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <body class="bg-dark text-white">
-    <div id="nav">
-        <div id="dateParent">
-            <p id="date">27.03.2020</p>
+    <nav>
+        <div class="outer desktop">
+            <p class="date">27.03.2020</p>
         </div>
-        <div id="bars">
+        <div class="middle">
             <div class="bar">
                 <div class="progress">
-                    <div id="bar1" class="progress-bar progress-bar-good" style="width: 90%;">
-                        45.000€
+                    <div id="bar1" class="progress-bar good" style="width: 90%;">
+                        3.150 Mrd. €
                     </div>
                 </div>
-                <p>Monatliches Gehalt</p>
+                <p>Bruttoinlandsprodukt</p>
             </div>
-            <div class="bar-margin"></div>
             <div class="bar">
                 <div class="progress">
-                    <div id="bar2" class="progress-bar progress-bar-bad" style="width: 10%;">
+                    <div id="bar2" class="progress-bar bad" style="width: 10%;">
                         50
                     </div>
                 </div>
                 <p>Inzidenzwert</p>
             </div>
-            <div class="bar-margin"></div>
             <div class="bar">
                 <div class="progress">
-                    <div id="bar3" class="progress-bar progress-bar-bad" style="width: 50%;">
+                    <div id="bar3" class="progress-bar bad" style="width: 50%;">
                         50%
                     </div>
                 </div>
                 <p>Zufriedenheit der Bürger</p>
             </div>
         </div>
-        <div id="settingsParent">
-            <i id="settings" class="bi bi-gear-fill"></i>
+        <div class="outer mobile">
+            <p class="date">27.03.2020</p>
         </div>
-    </div>
-    <div id="panel" class="text-center">
-        <div id="questionParent">
+        <div class="outer">
+            <p class="settings">
+                <i class="bi bi-gear-fill"></i>
+            </p>
+        </div>
+    </nav>
+    <main class="text-center">
+        <div class="question">
             <a id="questionLink" class="extern" href="https://www.zdf.de" target="_blank">
                 <i class="bi bi-box-arrow-up-right"></i>
             </a>
@@ -90,15 +93,15 @@
                 Was tust du?
             </div>
         </div>
-        <div id="answers">
-            <div id="answer1Parent" class="answerParent-margin answerParent">
+        <div class="answers">
+            <div class="answer">
                 <a id="answer1Link" class="extern d-none" href="https://www.zdf.de" target="_blank">
                     <i class="bi bi-box-arrow-up-right"></i>
                 </a>
                 <div id="answer1">Das China Virus gibt es nicht. Das ist nur ne normale Grippewelle. Die kann uns
                     nichts.</div>
             </div>
-            <div id="answer2Parent" class="answerParent">
+            <div class="answer">
                 <a id="answer2Link" class="extern" href="https://www.zdf.de" target="_blank">
                     <i class="bi bi-box-arrow-up-right"></i>
                 </a>
@@ -106,11 +109,11 @@
                     angesteckte Personen untersuchen.</div>
             </div>
         </div>
-    </div>
+    </main>
 
     <iframe id="backgroundMusic" width="1280" height="720"
         src="https://www.youtube.com/embed/40MJUEQ6RJM?autoplay=0&controls=0&disablekb=1&enablejsapi=1&iv_load_policy=3&loop=1&modestbranding=1&origin=https://covidmaster.github.io/&showinfo=0&start=13"
-        title="YouTube video player" frameborder="0" allow="autoplay; encrypted-media"></iframe>
+        title="YouTube video player" allow="autoplay; encrypted-media"></iframe>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
@@ -119,7 +122,7 @@
         integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
         crossorigin="anonymous"></script>
 
-    <script type="text/javascript" src="content.js"></script>
-    <script type="text/javascript" src="script.js"></script>
+    <script src="content.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
