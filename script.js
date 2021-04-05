@@ -1,6 +1,7 @@
 let currentContent = content[0];
 let rightOrder = true;
 let executedEvents = new Array(content.length).fill(0);
+let player;
 
 function getDate(germanDateFormat) {
 	let dateParts = germanDateFormat.split(".");
@@ -142,19 +143,15 @@ async function answerImpact(clickedAnswer) {
 	$("main").css("display", "block");
 }
 
-var player;
 function onYouTubeIframeAPIReady() {
 	player = new YT.Player("backgroundMusic", {
 		events: {
-			"onReady": onPlayerReady
+			"onReady": () => {
+				player.setVolume(25);
+				player.playVideo();
+			}
 		}
 	});
-}
-
-function onPlayerReady(event) {
-	function onPlayerReady(event) {
-		event.target.playVideo();
-	}
 }
 
 function init() {
@@ -163,8 +160,6 @@ function init() {
 		$("main").css("display", "none");
 		answerImpact($(this).find("div").attr("id"));
 	});
-	//player.setVolume(25);
-	//player.playVideo();
 }
 
 $(function () {
