@@ -1,7 +1,7 @@
 let currentContent = content[0];
 let rightOrder = true;
 let executedEvents = new Array(content.length).fill(0);
-let player;
+let music, intro;
 
 function getDate(germanDateFormat) {
 	let dateParts = germanDateFormat.split(".");
@@ -144,11 +144,11 @@ async function answerImpact(clickedAnswer) {
 }
 
 function onYouTubeIframeAPIReady() {
-	player = new YT.Player("backgroundMusic", {
+	music = new YT.Player("music", {
 		events: {
 			"onReady": () => {
-				player.setVolume(25);
-				player.playVideo();
+				music.setVolume(25);
+				music.playVideo();
 			}
 		}
 	});
