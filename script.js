@@ -135,15 +135,30 @@ async function answerImpact(clickedAnswer) {
 		days = currentContent.days;
 	}
 	for (let i = 0; i < days; i++) {
-		await sleep(30);
 		increaseDate();
 		changeScore(clickedAnswer);
+		await sleep(1000);
 	}
 	setContent();
 	$("main").css("display", "block");
 }
 
 function onYouTubeIframeAPIReady() {
+	// YT player for intro video
+	intro = new YT.Player("intro", {
+		events: {
+			"onReady": () => {
+				console.log("start");
+			},
+			"onStateChange": () => {
+				console.log("end");
+				// hide intro section when video ended
+				$(".intro").css("display", "none");
+			}
+		}
+	});
+
+	// YT player for background music
 	music = new YT.Player("music", {
 		events: {
 			"onReady": () => {
@@ -155,7 +170,15 @@ function onYouTubeIframeAPIReady() {
 }
 
 function init() {
+	// hide intro section when "Überspringen" button was clicked
+	$("#skip").click(function () {
+		$(".intro").css("display", "none");
+	});
+
+	// choose a new question/answer pair
 	setContent();
+
+	// hide question and answers when a answer was clicked
 	$(".answer").click(function () {
 		$("main").css("display", "none");
 		answerImpact($(this).find("div").attr("id"));
