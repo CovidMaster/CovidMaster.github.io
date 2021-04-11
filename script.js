@@ -147,13 +147,11 @@ function onYouTubeIframeAPIReady() {
 	// YT player for intro video
 	intro = new YT.Player("intro", {
 		events: {
-			"onReady": () => {
-				console.log("start");
-			},
 			"onStateChange": () => {
-				console.log("end");
 				// hide intro section when video ended
-				$(".intro").css("display", "none");
+				if (iframeId === 0) {
+					$(".intro").css("display", "none");
+				}
 			}
 		}
 	});
